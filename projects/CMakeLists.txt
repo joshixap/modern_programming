@@ -1,6 +1,5 @@
-cmake_minimum_required(VERSION 3.5)
-project(modern_programming)
+project(modern_programming_spring1)
 
-add_subdirectory(insertion_sort)
+add_subdirectory(sort)
+add_subdirectory(obuchaika)
 
-set(CMAKE_SUPPRESS_REGENERATION true)

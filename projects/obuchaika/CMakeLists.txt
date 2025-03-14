@@ -1,10 +1,15 @@
-cmake_minimum_required(VERSION 3.10)
-project(ConsoleMenu)
+project(obuchaika)
 
-set(CMAKE_CXX_STANDARD_REQUIRED True)
-
-add_executable(ConsoleMenu 
-    main.cpp 
-    menu_functions.cpp 
-    menu_items.cpp
+set(HEADERS 
+	menu.hpp
+	menu_functions.hpp
+	menu_items.hpp
 )
+
+set(SOURCES 
+	main.cpp
+	menu_functions.cpp
+	menu_items.cpp
+)
+
+add_executable(${PROJECT_NAME} ${HEADERS} ${SOURCES})
