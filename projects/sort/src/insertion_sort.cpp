@@ -1,18 +1,5 @@
+#include "insertion_sort.hpp"
 #include <iostream>
-
-void insertion_sort(int* const arr, const int size);
-void print_array(const char* const comment, int* arr, const int size);
-
-int main() {
-    int arr[] = {7, 31, 9, 35, 2, 8, 4, 15};
-    const int arr_size = sizeof(arr) / sizeof(arr[0]);
-
-    print_array("Массив до сортировки:", arr, arr_size);
-    insertion_sort(arr, arr_size);
-    print_array("Массив после сортировки:", arr, arr_size);
-
-    return 0;
-}
 
 void insertion_sort(int* const arr, const int size) {
     for (int i = 1; i != size; ++i) {
