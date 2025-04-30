@@ -5,6 +5,8 @@ enable_testing()
 add_subdirectory(lib/googletest)
 
 add_subdirectory(sort)
+add_subdirectory(class)
+add_subdirectory(vector_list)
 add_subdirectory(obuchaika)
 add_subdirectory(insertion_sort)
 add_subdirectory(insertion_sort_mf)

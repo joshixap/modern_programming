@@ -119,3 +119,5 @@ bool Vector<T>::remove_first(const T& value) {
 	size--;
 	return true;
 }
+
+template class Vector<int>;

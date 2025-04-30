@@ -25,4 +25,6 @@ namespace biv {
 			void push_back(const T& value);
 			bool remove_first(const T& value);
 	};
+
+	extern template class Vector<int>;
 }

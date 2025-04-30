@@ -33,4 +33,6 @@ namespace biv {
 			void push_back(const T& value);
 			bool remove_first(const T& value) noexcept;
 	};
+	
+	extern template class DoublyLinkedList<int>;
 }

@@ -1,5 +1,5 @@
 set(SOURCES 
-    test_insertion.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/test_insertion.cpp
 )
 
 add_executable(test_insertion ${SOURCES})

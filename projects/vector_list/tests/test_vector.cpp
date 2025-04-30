@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "vector.hpp"
+#include "../src/vector.hpp"
 
 using biv::Vector;
 

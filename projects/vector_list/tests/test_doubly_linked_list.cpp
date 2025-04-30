@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "doubly_linked_list.hpp"
+#include "../src/doubly_linked_list.hpp"
 
 using biv::DoublyLinkedList;
 
