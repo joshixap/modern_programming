@@ -14,10 +14,7 @@ LongNumber::LongNumber() : length(1), sign(POSITIVE) {
 }
 
 LongNumber::LongNumber(int length, int sign) : length(length), sign(sign) {
-    numbers = new int[length];
-    for (int i = 0; i < length; i++) {
-        numbers[i] = 0;
-    }
+    numbers = new int[length](); // Инициализация всех цифр нулями
 }
 
 LongNumber::LongNumber(const char* const str) {
@@ -36,9 +33,8 @@ LongNumber::LongNumber(const char* const str) {
     }
 }
 
-LongNumber::LongNumber(const LongNumber& x) {
-    length = x.length;
-    sign = x.sign;
+LongNumber::LongNumber(const LongNumber& x) : length(x.length), sign(x.sign) {
+    
     numbers = new int[length];
     for (int i = 0; i < length; i++) {
         numbers[i] = x.numbers[i];
@@ -53,9 +49,9 @@ LongNumber::LongNumber(LongNumber&& x) {
 }
 
 LongNumber::~LongNumber() {
-    length = 0;
     delete[] numbers;
     numbers = nullptr;
+    length = 0;
 }
 
 LongNumber& LongNumber::operator = (const char* const str) {

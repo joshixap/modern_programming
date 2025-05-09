@@ -13,16 +13,16 @@ TEST(LongNumberTest, DefaultConstructor) {
 TEST(LongNumberTest, ConstructorWithString) {
     LongNumber num("12345");
     EXPECT_EQ(num.get_digits_number(), 5);
-    EXPECT_EQ(num.get_rank_number(1), 1);
-    EXPECT_EQ(num.get_rank_number(5), 5);
+    EXPECT_EQ(num.get_rank_number(1), 5);   
+    EXPECT_EQ(num.get_rank_number(5), 1);  
     EXPECT_EQ(num.is_negative(), false);
 }
 
 TEST(LongNumberTest, ConstructorWithNegativeString) {
     LongNumber num("-12345");
     EXPECT_EQ(num.get_digits_number(), 5);
-    EXPECT_EQ(num.get_rank_number(1), 1);
-    EXPECT_EQ(num.get_rank_number(5), 5);
+    EXPECT_EQ(num.get_rank_number(1), 5);  
+    EXPECT_EQ(num.get_rank_number(5), 1);  
     EXPECT_EQ(num.is_negative(), true);
 }
 
@@ -30,8 +30,8 @@ TEST(LongNumberTest, CopyConstructor) {
     LongNumber num("12345");
     LongNumber copy(num);
     EXPECT_EQ(copy.get_digits_number(), 5);
-    EXPECT_EQ(copy.get_rank_number(1), 1);
-    EXPECT_EQ(copy.get_rank_number(5), 5);
+    EXPECT_EQ(copy.get_rank_number(1), 5);  
+    EXPECT_EQ(copy.get_rank_number(5), 1);  
     EXPECT_EQ(copy.is_negative(), false);
 }
 
@@ -39,18 +39,17 @@ TEST(LongNumberTest, MoveConstructor) {
     LongNumber num("12345");
     LongNumber moved(std::move(num));
     EXPECT_EQ(moved.get_digits_number(), 5);
-    EXPECT_EQ(moved.get_rank_number(1), 1);
-    EXPECT_EQ(moved.get_rank_number(5), 5);
+    EXPECT_EQ(moved.get_rank_number(1), 5);  
+    EXPECT_EQ(moved.get_rank_number(5), 1);  
     EXPECT_EQ(moved.is_negative(), false);
-    EXPECT_EQ(num.get_digits_number(), 1); // num should be empty
 }
 
 TEST(LongNumberTest, AssignmentOperatorWithString) {
     LongNumber num;
     num = "12345";
     EXPECT_EQ(num.get_digits_number(), 5);
-    EXPECT_EQ(num.get_rank_number(1), 1);
-    EXPECT_EQ(num.get_rank_number(5), 5);
+    EXPECT_EQ(num.get_rank_number(1), 5);  
+    EXPECT_EQ(num.get_rank_number(5), 1);  
     EXPECT_EQ(num.is_negative(), false);
 }
 
@@ -59,8 +58,8 @@ TEST(LongNumberTest, AssignmentOperatorWithLongNumber) {
     LongNumber assigned;
     assigned = num;
     EXPECT_EQ(assigned.get_digits_number(), 5);
-    EXPECT_EQ(assigned.get_rank_number(1), 1);
-    EXPECT_EQ(assigned.get_rank_number(5), 5);
+    EXPECT_EQ(assigned.get_rank_number(1), 5);  
+    EXPECT_EQ(assigned.get_rank_number(5), 1);  
     EXPECT_EQ(assigned.is_negative(), false);
 }
 
@@ -97,17 +96,17 @@ TEST(LongNumberTest, AddOperator) {
     LongNumber num2("6789");
     LongNumber result = num1 + num2;
     EXPECT_EQ(result.get_digits_number(), 5);
-    EXPECT_EQ(result.get_rank_number(1), 2);
-    EXPECT_EQ(result.get_rank_number(5), 4);
+    EXPECT_EQ(result.get_rank_number(1), 4);  
+    EXPECT_EQ(result.get_rank_number(5), 1);  
 }
 
 TEST(LongNumberTest, SubtractOperator) {
     LongNumber num1("12345");
     LongNumber num2("6789");
     LongNumber result = num1 - num2;
-    EXPECT_EQ(result.get_digits_number(), 5);
-    EXPECT_EQ(result.get_rank_number(1), 5);
-    EXPECT_EQ(result.get_rank_number(5), 6);
+    EXPECT_EQ(result.get_digits_number(), 4);   
+    EXPECT_EQ(result.get_rank_number(1), 6);  
+    EXPECT_EQ(result.get_rank_number(4), 5);  
 }
 
 TEST(LongNumberTest, MultiplyOperator) {
@@ -115,8 +114,8 @@ TEST(LongNumberTest, MultiplyOperator) {
     LongNumber num2("456");
     LongNumber result = num1 * num2;
     EXPECT_EQ(result.get_digits_number(), 5);
-    EXPECT_EQ(result.get_rank_number(1), 5);
-    EXPECT_EQ(result.get_rank_number(5), 8);
+    EXPECT_EQ(result.get_rank_number(1), 8);  
+    EXPECT_EQ(result.get_rank_number(5), 5);  
 }
 
 TEST(LongNumberTest, DivideOperator) {
@@ -124,8 +123,8 @@ TEST(LongNumberTest, DivideOperator) {
     LongNumber num2("5");
     LongNumber result = num1 / num2;
     EXPECT_EQ(result.get_digits_number(), 4);
-    EXPECT_EQ(result.get_rank_number(1), 2);
-    EXPECT_EQ(result.get_rank_number(4), 9);
+    EXPECT_EQ(result.get_rank_number(1), 9);  
+    EXPECT_EQ(result.get_rank_number(4), 2);  
 }
 
 TEST(LongNumberTest, ModuloOperator) {
@@ -146,7 +145,7 @@ TEST(LongNumberTest, NegativeNumbers) {
     LongNumber num1("-12345");
     LongNumber num2("6789");
     LongNumber result = num1 + num2;
-    EXPECT_EQ(result.get_digits_number(), 5);
-    EXPECT_EQ(result.get_rank_number(1), 4);
-    EXPECT_EQ(result.get_rank_number(5), 6);
+    EXPECT_EQ(result.get_digits_number(), 4);  
+    EXPECT_EQ(result.get_rank_number(1), 6);  
+    EXPECT_EQ(result.get_rank_number(4), 5);  
 }

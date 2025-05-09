@@ -49,10 +49,8 @@ template<typename T>
 void DoublyLinkedList<T>::push_back(const T& value) {
     Node* new_node = new Node(value);
     if (end == nullptr) {
-        begin = end;
-	end = new_node;
+        begin = end = new_node;
     } else {
-        // Добавляем в конец
         end->next = new_node;
         new_node->prev = end;
         end = new_node;
